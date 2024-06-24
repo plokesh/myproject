@@ -3,7 +3,7 @@ name: Deploy App to Azure App Service
 on:
   push:
     branches:
-      - master
+      - azuredev
 
 jobs:
   build:
@@ -34,6 +34,6 @@ jobs:
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v2
         with:
-          app-name: springboot-app-test
-          publish-profile: ${{ secrets.AZURE_SPRINGBOOT_WEBAPP_PUBLISH_PROFILE }}
+          app-name: springboot-app-jar
+          publish-profile: ${{ secrets.AZURE_SPRINGBOOT_JAR_WEBAPP_PUBLISH_PROFILE }}
           package: '*.war'
